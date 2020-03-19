@@ -27,14 +27,15 @@ const App = () => {
   return (
     <>
       <SavedList list={savedList} />
+      <Route exact path ="/" component={MovieList} />
 
-      <Route exact path="/">
-        <MovieList movies={movieList} />
-      </Route>
+      <Route path="/movies/:id" render={props => {
+        return <Movie {...props} addToSavedList={addToSavedList} />;
+      }}/>
 
-      <Route path="/movies/:id">
-        <Movie addToSavedList={addToSavedList} />
-      </Route>
+      <Route path="/update-moive/id" render={props => {
+        return <UpdateMovie {...props} addToSavedList={addToSavedList} />;
+      }}/>
     </>
   );
 };
