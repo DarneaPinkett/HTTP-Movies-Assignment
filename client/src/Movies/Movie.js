@@ -42,14 +42,14 @@ saveMovie = () => {
   }
 
   render(){
-  if (!movie) {
+  if (!this.state.movie) {
     return <div>Loading movie information...</div>;
   }
 
   return (
     <div className='save-wrapper'>
       <MovieCard movie={this.state.movie} />
-      <div className='save-button' onClick={saveMovie}>
+      <div className='save-button' onClick={this.saveMovie}>
         Save
       </div>
       <button>
