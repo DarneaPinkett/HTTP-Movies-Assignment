@@ -48,11 +48,14 @@ saveMovie = () => {
 
   return (
     <div className='save-wrapper'>
-      <MovieCard movie={movie} />
-
+      <MovieCard movie={this.state.movie} />
       <div className='save-button' onClick={saveMovie}>
         Save
       </div>
+      <button>
+        <Link to={`/update-movie/${this.state.movie.id}`}>Edit Movie</Link>
+      </button>
+      <button onClick={this.handleDelete}>Delete Movie</button>
     </div>
   );
 }
